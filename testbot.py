@@ -37,7 +37,7 @@ url = 'https://api.exchangeratesapi.io/'
 
 bot = telebot.TeleBot('YOUR TOKEN HERE')
 keyboard1 = telebot.types.ReplyKeyboardMarkup(True, True)
-keyboard1.row('Show rates', 'Exchange', 'History')
+keyboard1.row('Show rates', 'Exchange', 'History', 'Help')
 # keyboard2 = telebot.types.ReplyKeyboardMarkup(True, True)
 # keyboard2.row('Home')
 
@@ -63,8 +63,8 @@ def response(message):
 
 @bot.message_handler(commands=['help'])
 def help_message(message):
-    bot.send_message(message.chat.id, '/list or show rates shows all the rates based on USD.\n/exchange allows you to '
-                                      'exchange currency values. Just follow the instructions.\n/history provides you'
+    bot.send_message(message.chat.id, 'Show rates shows all the rates based on USD.\nExchange allows you to '
+                                      'exchange currency values. Just follow the instructions.\nHistory provides you'
                                       ' a list of changes to a currencies for last 7 days.', reply_markup=keyboard1)
 
 
